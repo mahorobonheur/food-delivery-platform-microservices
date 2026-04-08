@@ -44,8 +44,7 @@ jobs:
           timeout_minutes: 12
           max_attempts: 2
           retry_on: error
-          command: mvn -B -ntp -DskipITs=true test
-        working-directory: ${{ matrix.module }}
+          command: cd "${{ matrix.module }}" && mvn -B -ntp -DskipITs=true test
         env:
           SPRING_PROFILES_ACTIVE: test
           DB_URL: jdbc:postgresql://localhost:5432/testdb
