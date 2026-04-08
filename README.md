@@ -130,10 +130,10 @@ Required environment variable:
 
 ## Default admin user (customer DB)
 
-On **first** `postgres-customer` startup, scripts in `docker/postgres/customer/` create tables (if needed), seed roles, and insert an admin:
+On **first** `data.sql` startup, scripts in `customer-service/src/main/resources/data.sql` it seeds roles, and insert an admin:
 
-- **Email:** `admin@fooddelivery.test`
-- **Password:** `password`
+- **Email:** `admin@fooddelivery.com`
+- **Password:** `admin@123`
 
 This only runs when the Postgres data volume is new. To re-run init, remove the `postgres_customer_data` volume and bring the stack up again.
 
