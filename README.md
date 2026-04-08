@@ -50,7 +50,6 @@ See editable diagrams in:
 - `docs/diagrams/architecture.drawio`
 - `docs/diagrams/order-delivery-events.drawio`
 - `docs/api-contracts.md`
-- `docs/rubric-mapping.md`
 
 ## Service Boundaries and Responsibilities
 
