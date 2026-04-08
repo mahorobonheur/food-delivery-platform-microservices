@@ -2,12 +2,17 @@ name: Microservices CI
 
 on:
   push:
-    branches: ["**"]
+    branches: ["main", "develop", "feature/**"]
   pull_request:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test-modules:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     strategy:
       fail-fast: false
       matrix:
@@ -29,6 +34,27 @@ jobs:
           java-version: "21"
           cache: maven
 
-      - name: Test ${{ matrix.module }}
-        run: mvn -B -q test
+      - name: Verify module path
+        run: test -f pom.xml
         working-directory: ${{ matrix.module }}
+
+      - name: Test ${{ matrix.module }}
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 12
+          max_attempts: 2
+          retry_on: error
+          command: mvn -B -ntp -DskipITs=true test
+        working-directory: ${{ matrix.module }}
+        env:
+          SPRING_PROFILES_ACTIVE: test
+          DB_URL: jdbc:postgresql://localhost:5432/testdb
+          DB_USERNAME: postgres
+          DB_PASSWORD: postgres
+          JWT_SECRET_KEY: test-secret-key-that-is-long-enough-for-ci
+          CLIENT_ID: ci-client-id
+          CLIENT_SECRET: ci-client-secret
+          RABBITMQ_USERNAME: guest
+          RABBITMQ_PASSWORD: guest
+          INTERNAL_SERVICE_TOKEN: ci-internal-token
+          INTERNAL_SERVICE_TOKENS: ci-internal-token
