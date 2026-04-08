@@ -1,6 +1,5 @@
 # Food Delivery Platform - Microservices (Spring Boot)
 
-> [!TIP]
 > Complexity: **Advanced**  
 > Time Estimate: **14-18 hours**
 
