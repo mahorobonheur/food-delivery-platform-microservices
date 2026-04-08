@@ -228,13 +228,6 @@ Recommended test path:
 6. **Reliability and operability**  
    Added circuit breakers/fallbacks for dependency outages, actuator endpoints for health/metrics, and DLQ/DLX for message failure isolation.
 
-## Rubric Evidence
-
-For direct grader mapping of all required criteria to implementation evidence, see:
-
-- `docs/rubric-mapping.md`
-- `docs/api-contracts.md`
-
 ## Troubleshooting
 
 - `401` from internal order endpoint:
