@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: restaurant-service
+  datasource:
+    url: jdbc:postgresql://postgres-restaurant:5432/restaurant_db
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+server:
+  port: 8086
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+  instance:
+    prefer-ip-address: true
+jwt:
+  secret: ${JWT_SECRET_KEY}

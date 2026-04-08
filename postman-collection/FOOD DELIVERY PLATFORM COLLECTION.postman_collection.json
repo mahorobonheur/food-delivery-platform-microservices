@@ -1,0 +1,807 @@
+{
+  "info": {
+    "_postman_id": "21c843e4-12d1-4537-97b5-295c7e1d6f72",
+    "name": "FOOD DELIVERY PLATFORM COLLECTION",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49237453"
+  },
+  "item": [
+    {
+      "name": "Customers || Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"username\": \"bonheur_\",\r\n\"email\":\"mahoro8@gmail.com\",\r\n\"password\":\"Bonheur@123\",\r\n\"firstName\":\"Bonheur\",\r\n\"lastName\":\"Mahoro\",\r\n\"phone\":\"0782817887\",\r\n\"deliveryAddress\":\"Kicukiro Kigali\",\r\n\"city\":\"Kigali\",\r\n\"roleId\":\"e350d0c8-4c57-4e47-8888-285259ef1c96\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customers || Update",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"username\": \"bonheur_\",\r\n\"email\":\"mahoro8@gmail.com\",\r\n\"password\":\"Bonheur@123\",\r\n\"firstName\":\"Bonheur\",\r\n\"lastName\":\"Mahoro\",\r\n\"phone\":\"0782817887\",\r\n\"deliveryAddress\":\"Kicukiro Kigali\",\r\n\"city\":\"Kigali\",\r\n\"roleId\":\"e350d0c8-4c57-4e47-8888-285259ef1c96\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customers || Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"mahoro8@gmail.com\",\r\n    \"password\":\"Bonheur@123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/customers/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "customers",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Role || GetByID",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Role || Create",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Role || All",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "mahoro@gmail.com",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "Bonheur@123",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/role",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "role"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Role || Update",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "mahoro@gmail.com",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "Bonheur@123",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/role/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "role",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Restaurant || Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm8xMEBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9DVVNUT01FUiIsImlhdCI6MTc3MzU3OTExOSwiZXhwIjoxNzczNjY1NTE5fQ.Ndx8hwYvKmeO9xcy33dW0rbBxxDcec7wfz-ffsl6ZzA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Bonheur Restaurant\",\r\n    \"description\":\"The restaurant is fine and amazing\",\r\n   \"cuisineType\":\"Modern\",\r\n    \"address\":\"Niboye\",\r\n    \"city\":\"Kigali\",\r\n    \"phone\":\"0782817801\",\r\n    \"estimatedDeliveryMinutes\":\"10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/restaurants",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "restaurants"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Restaurant || Search Cuisine",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm84QGdtYWlsLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc3MjcyMTU1OSwiZXhwIjoxNzcyNzI1MTU5fQ.sLPXZHNNvC0Wtb_AdLGDeXuC-tCTpDdxWrikTw4UaTA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Bonheur Restaurant\",\r\n    \"description\":\"The restaurant is fine and amazing\",\r\n   \"cuisineType\":\"Modern\",\r\n    \"address\":\"Niboye\",\r\n    \"city\":\"Kigali\",\r\n    \"phone\":\"0782817801\",\r\n    \"estimatedDeliveryMinutes\":\"10\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/restaurants/search/cuisine/modern",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "restaurants",
+            "search",
+            "cuisine",
+            "modern"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Restaurant || Search City",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm84QGdtYWlsLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc3MjcyMTU1OSwiZXhwIjoxNzcyNzI1MTU5fQ.sLPXZHNNvC0Wtb_AdLGDeXuC-tCTpDdxWrikTw4UaTA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Bonheur Restaurant\",\r\n    \"description\":\"The restaurant is fine and amazing\",\r\n   \"cuisineType\":\"Modern\",\r\n    \"address\":\"Niboye\",\r\n    \"city\":\"Kigali\",\r\n    \"phone\":\"0782817801\",\r\n    \"estimatedDeliveryMinutes\":\"10\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/restaurants/search/city/Kigali",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "restaurants",
+            "search",
+            "city",
+            "Kigali"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Restaurant || Get all",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm84QGdtYWlsLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc3MjcyMTU1OSwiZXhwIjoxNzcyNzI1MTU5fQ.sLPXZHNNvC0Wtb_AdLGDeXuC-tCTpDdxWrikTw4UaTA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Bonheur Restaurant\",\r\n    \"description\":\"The restaurant is fine and amazing\",\r\n   \"cuisineType\":\"Modern\",\r\n    \"address\":\"Niboye\",\r\n    \"city\":\"Kigali\",\r\n    \"phone\":\"0782817801\",\r\n    \"estimatedDeliveryMinutes\":\"10\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/restaurants/search/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "restaurants",
+            "search",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Restaurant || GetByID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm84QGdtYWlsLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc3MjcyMTU1OSwiZXhwIjoxNzcyNzI1MTU5fQ.sLPXZHNNvC0Wtb_AdLGDeXuC-tCTpDdxWrikTw4UaTA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Bonheur Restaurant\",\r\n    \"description\":\"The restaurant is fine and amazing\",\r\n   \"cuisineType\":\"Modern\",\r\n    \"address\":\"Niboye\",\r\n    \"city\":\"Kigali\",\r\n    \"phone\":\"0782817801\",\r\n    \"estimatedDeliveryMinutes\":\"10\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/restaurants/8a2c610e-fe62-4f6c-85e2-9b880a8f1869",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "restaurants",
+            "8a2c610e-fe62-4f6c-85e2-9b880a8f1869"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Restaurant || Add Menu Item",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm84QGdtYWlsLmNvbSIsInJvbGUiOiJPV05FUiIsImlhdCI6MTc3MjcyMTU1OSwiZXhwIjoxNzcyNzI1MTU5fQ.sLPXZHNNvC0Wtb_AdLGDeXuC-tCTpDdxWrikTw4UaTA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"name\":\"Vegetables Soup\",\r\n \"description\":\"Cooked with different vegetables perfectly\",\r\n \"price\":\"3000\",\r\n    \"category\":\"Soups\",\r\n    \"imageUrl\":\"C:\\\\Users\\\\Amalitech\\\\Pictures\\\\typing results 2.png\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/restaurants/8a2c610e-fe62-4f6c-85e2-9b880a8f1869/menu",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "restaurants",
+            "8a2c610e-fe62-4f6c-85e2-9b880a8f1869",
+            "menu"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Restaurant || Update MenuItem",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/restaurants/50209efc-608e-4c91-befe-094b8b99aec8/menu",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "restaurants",
+            "50209efc-608e-4c91-befe-094b8b99aec8",
+            "menu"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Restaurant || GetMenuByID",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Restaurant || ToggleAvailability",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/restaurants/menu/50209efc-608e-4c91-befe-094b8b99aec8",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "restaurants",
+            "menu",
+            "50209efc-608e-4c91-befe-094b8b99aec8"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Order || Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm85QGdtYWlsLmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc3Mjc5MzAxOCwiZXhwIjoxNzcyNzk2NjE4fQ.bHSedE77z7eCLjGOgql05BMIO9t7lXy7UDxczZUALvY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"restaurantId\": \"8a2c610e-fe62-4f6c-85e2-9b880a8f1869\",\r\n  \"items\": [\r\n    {\r\n      \"menuItemId\": \"50209efc-608e-4c91-befe-094b8b99aec8\",\r\n      \"quantity\": 2,\r\n      \"specialInstructions\": \"Extra spicy\"\r\n    }\r\n  ],\r\n  \"deliveryAddress\": \"123 Main Street, Kigali, Rwanda\",\r\n  \"specialInstructions\": \"Leave at the door if not home\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Order || GetById",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm85QGdtYWlsLmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc3Mjc5ODI0NiwiZXhwIjoxNzcyODAxODQ2fQ.7x77jQyIvLjFB4TL2f2PYhzKRbRRKuUYYSiz1EPTJf8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"restaurantId\": \"8a2c610e-fe62-4f6c-85e2-9b880a8f1869\",\r\n  \"items\": [\r\n    {\r\n      \"menuItemId\": \"50209efc-608e-4c91-befe-094b8b99aec8\",\r\n      \"quantity\": 2,\r\n      \"specialInstructions\": \"Extra spicy\"\r\n    }\r\n  ],\r\n  \"deliveryAddress\": \"123 Main Street, Kigali, Rwanda\",\r\n  \"specialInstructions\": \"Leave at the door if not home\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/orders/34c19aa6-565d-4bba-b178-0a1c07e83b12",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "orders",
+            "34c19aa6-565d-4bba-b178-0a1c07e83b12"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Order || RestaurantOrders",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm9AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzcyNzk4NTUxLCJleHAiOjE3NzI4MDIxNTF9.9DFscRZpkNW0yTmowRFob4-JRay8DU7ajTAnZ6Kw8ao",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"restaurantId\": \"8a2c610e-fe62-4f6c-85e2-9b880a8f1869\",\r\n  \"items\": [\r\n    {\r\n      \"menuItemId\": \"50209efc-608e-4c91-befe-094b8b99aec8\",\r\n      \"quantity\": 2,\r\n      \"specialInstructions\": \"Extra spicy\"\r\n    }\r\n  ],\r\n  \"deliveryAddress\": \"123 Main Street, Kigali, Rwanda\",\r\n  \"specialInstructions\": \"Leave at the door if not home\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/orders/restaurant/8a2c610e-fe62-4f6c-85e2-9b880a8f1869",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "orders",
+            "restaurant",
+            "8a2c610e-fe62-4f6c-85e2-9b880a8f1869"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Order || UpdateStatus",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm9AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzcyNzk4NTUxLCJleHAiOjE3NzI4MDIxNTF9.9DFscRZpkNW0yTmowRFob4-JRay8DU7ajTAnZ6Kw8ao",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"restaurantId\": \"8a2c610e-fe62-4f6c-85e2-9b880a8f1869\",\r\n  \"items\": [\r\n    {\r\n      \"menuItemId\": \"50209efc-608e-4c91-befe-094b8b99aec8\",\r\n      \"quantity\": 2,\r\n      \"specialInstructions\": \"Extra spicy\"\r\n    }\r\n  ],\r\n  \"deliveryAddress\": \"123 Main Street, Kigali, Rwanda\",\r\n  \"specialInstructions\": \"Leave at the door if not home\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/orders/34c19aa6-565d-4bba-b178-0a1c07e83b12/status?status=CONFIRMED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "orders",
+            "34c19aa6-565d-4bba-b178-0a1c07e83b12",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "CONFIRMED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Order || Cancel",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Delivery || GetById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm85QGdtYWlsLmNvbSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTc3Mjc5MzAxOCwiZXhwIjoxNzcyNzk2NjE4fQ.bHSedE77z7eCLjGOgql05BMIO9t7lXy7UDxczZUALvY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"restaurantId\": \"8a2c610e-fe62-4f6c-85e2-9b880a8f1869\",\r\n  \"items\": [\r\n    {\r\n      \"menuItemId\": \"50209efc-608e-4c91-befe-094b8b99aec8\",\r\n      \"quantity\": 2,\r\n      \"specialInstructions\": \"Extra spicy\"\r\n    }\r\n  ],\r\n  \"deliveryAddress\": \"123 Main Street, Kigali, Rwanda\",\r\n  \"specialInstructions\": \"Leave at the door if not home\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/delivery",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "delivery"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delivery || ByOrderId",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm8zQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzczNTgzMDQwLCJleHAiOjE3NzM2Njk0NDB9.4AkOZddXk-R31VLd_RlXYrsDFIaubJqz8H2064xKTNU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/deliveries/order/6fad1c78-440a-4663-baed-784cdb41b619",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "deliveries",
+            "order",
+            "6fad1c78-440a-4663-baed-784cdb41b619"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delivery || ByStatus",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm8zQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzczNTgzMDQwLCJleHAiOjE3NzM2Njk0NDB9.4AkOZddXk-R31VLd_RlXYrsDFIaubJqz8H2064xKTNU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/deliveries/status/ASSIGNED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "deliveries",
+            "status",
+            "ASSIGNED"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delivery || Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhvcm8zQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzczNTgzMDQwLCJleHAiOjE3NzM2Njk0NDB9.4AkOZddXk-R31VLd_RlXYrsDFIaubJqz8H2064xKTNU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/deliveries/b3521cc2-9770-4765-b7f4-dcfe4448c764/status?status=PICKED_UP",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "deliveries",
+            "b3521cc2-9770-4765-b7f4-dcfe4448c764",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "PICKED_UP"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delivery || Cancel",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/deliveries/b03022f4-5d39-411a-ae28-4b687713778e/cancel",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "deliveries",
+            "b03022f4-5d39-411a-ae28-4b687713778e",
+            "cancel"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

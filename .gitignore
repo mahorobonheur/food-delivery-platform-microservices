@@ -1,0 +1,20 @@
+# Env / secrets
+.env
+**/.env
+
+# Build outputs
+**/target/
+**/build/
+*.class
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram id="architecture-1" name="Architecture">
+    <mxGraphModel dx="1310" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="client" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="Client&#xa;(Browser / Postman)" vertex="1">
+          <mxGeometry height="70" width="220" x="690" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;" value="API Gateway :8080&#xa;JWT Filter + Redis Rate Limiter" vertex="1">
+          <mxGeometry height="90" width="320" x="640" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="eureka" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Eureka Server :8761&#xa;Service Registry" vertex="1">
+          <mxGeometry height="90" width="240" x="1040" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="rabbit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="RabbitMQ :5672&#xa;order.exchange / delivery.exchange&#xa;DLQ enabled" vertex="1">
+          <mxGeometry height="110" width="240" x="1040" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="redis" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Redis :6379&#xa;Gateway rate limiting" vertex="1">
+          <mxGeometry height="80" width="240" x="940" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="customer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Customer Service :8085" vertex="1">
+          <mxGeometry height="70" width="220" x="120" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="restaurant" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Restaurant Service :8086" vertex="1">
+          <mxGeometry height="70" width="220" x="370" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="order" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="Order Service :8088" vertex="1">
+          <mxGeometry height="70" width="220" x="680" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="delivery" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="Delivery Service :8087" vertex="1">
+          <mxGeometry height="70" width="220" x="370" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="dbCustomer" parent="1" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f5f5f5;strokeColor=#666666;" value="customer_db" vertex="1">
+          <mxGeometry height="70" width="160" x="150" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="dbRestaurant" parent="1" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f5f5f5;strokeColor=#666666;" value="restaurant_db" vertex="1">
+          <mxGeometry height="70" width="160" x="130" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="dbOrder" parent="1" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f5f5f5;strokeColor=#666666;" value="order_db" vertex="1">
+          <mxGeometry height="70" width="160" x="740" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="dbDelivery" parent="1" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f5f5f5;strokeColor=#666666;" value="delivery_db" vertex="1">
+          <mxGeometry height="70" width="160" x="390" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="client" style="endArrow=block;html=1;strokeWidth=2;" target="gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="gateway" style="endArrow=block;html=1;" target="customer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="gateway" style="endArrow=block;html=1;" target="restaurant">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="gateway" style="endArrow=block;html=1;" target="order">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="gateway" style="endArrow=block;html=1;" target="delivery">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="customer" style="endArrow=block;html=1;dashed=1;" target="dbCustomer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="restaurant" style="endArrow=block;html=1;dashed=1;" target="dbRestaurant">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="order" style="endArrow=block;html=1;dashed=1;" target="dbOrder">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="1" source="delivery" style="endArrow=block;html=1;dashed=1;" target="dbDelivery">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="1" source="customer" style="endArrow=open;html=1;dashed=1;" target="eureka" value="register/find services">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" edge="1" parent="1" source="restaurant" style="endArrow=open;html=1;dashed=1;" target="eureka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge12" edge="1" parent="1" source="order" style="endArrow=open;html=1;dashed=1;" target="eureka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge13" edge="1" parent="1" source="delivery" style="endArrow=open;html=1;dashed=1;" target="eureka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge14" edge="1" parent="1" source="gateway" style="endArrow=open;html=1;dashed=1;" target="eureka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge15" edge="1" parent="1" source="order" style="endArrow=block;html=1;strokeColor=#d6b656;" target="rabbit" value="OrderPlaced / OrderCancelled">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge16" edge="1" parent="1" source="delivery" style="endArrow=block;html=1;strokeColor=#d6b656;" target="rabbit" value="DeliveryStatusUpdated">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge17" edge="1" parent="1" source="rabbit" style="endArrow=block;html=1;strokeColor=#d6b656;" target="delivery">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge18" edge="1" parent="1" source="rabbit" style="endArrow=block;html=1;strokeColor=#d6b656;" target="order">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge19" edge="1" parent="1" source="gateway" style="endArrow=block;html=1;strokeColor=#b85450;dashed=1;" target="redis" value="rate-limit counters">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
